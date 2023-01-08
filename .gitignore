@@ -16,4 +16,4 @@ packer_cache
 .DS_Store
 ./.vagrant
 ./datos
-loader.rb
+./rgloader
