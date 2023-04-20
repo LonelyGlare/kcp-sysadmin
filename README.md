@@ -4,7 +4,7 @@
 
 
 
-Para arrancar las VMs se introduce en el directorio raiz (/) :
+Para arrancar las VMs se introduce en el directorio raiz  :
 
     vagrant up 
 
