@@ -44,7 +44,7 @@ systemctl restart php7.4-fpm
 
 ##MariaDB Secure
 mysql_install_db --datadir=/var/lib/mysql --user=mysql
-mysql --user=root < /vagrant/software/MariaDB.sql
+mysql --user=root < /vagrant/software/wp/MariaDB.sql
 
 ##Install filebeat
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -56,7 +56,7 @@ filebeat modules enable system
 filebeat modules enable nginx
 
 #Configurar Filebeat
-cp /vagrant/software/filebeat.yml /etc/filebeat/filebeat.yml
+cp /vagrant/software/wp/filebeat.yml /etc/filebeat/filebeat.yml
 systemctl enable filebeat --now
 systemctl restart filebeat
 

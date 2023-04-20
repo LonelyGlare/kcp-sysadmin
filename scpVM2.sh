@@ -35,7 +35,7 @@ systemctl enable elasticsearch --now
 
 ##Obtain & install Logstash
 apt-get install -y logstash
-cp /vagrant/software/*.conf /etc/logstash/conf.d/
+cp /vagrant/software/elk/*.conf /etc/logstash/conf.d/
 chmod 644 /etc/logstash/conf.d/*.conf
 systemctl start logstash
 systemctl enable logstash
@@ -43,7 +43,7 @@ systemctl enable logstash
 
 #Install Kibana & authn Kibana
 apt-get install -y kibana 
-cp /vagrant/software/kibana.conf /etc/nginx/sites-available/default
+cp /vagrant/software/elk/kibana.conf /etc/nginx/sites-available/default
 touch /etc/nginx/htpasswd.users
 if ! grep -q kibanaadmin /etc/nginx/htpasswd.users; then
     echo "kibanaadmin:$(openssl passwd -apr1 -in /vagrant/.kibana)" >> /etc/nginx/htpasswd.users
