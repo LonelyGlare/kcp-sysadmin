@@ -35,7 +35,9 @@ systemctl enable elasticsearch --now
 
 ##Obtain & install Logstash
 apt-get install -y logstash
-cp /vagrant/software/elk/*.conf /etc/logstash/conf.d/
+cp /vagrant/software/elk/02-beats-input.conf /etc/logstash/conf.d/
+cp /vagrant/software/elk/30-elasticsearch-output.conf /etc/logstash/conf.d/
+cp /vagrant/software/elk/10-syslog-filter.conf /etc/logstash/conf.d/
 chmod 644 /etc/logstash/conf.d/*.conf
 systemctl start logstash
 systemctl enable logstash
